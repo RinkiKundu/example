@@ -1,0 +1,21 @@
+---
+- name: Generate HTML Report
+  hosts: localhost
+  gather_facts: false
+
+  vars:
+    column_values: "ServerName;Reachable;serverType;osVersion;Uptime;cpuUsagePercent;cpuCores"
+    row_values: "localhost;Yes;Physical;Microsoft Windows 10 Pro;4D 6H 57M 48S;<td bgcolor=greenColor>13</td>;<td bgcolor=yellowColor>4</td>~abc;No;-;-;-;-;-~xyz;No;-;-;-;-;-"
+    row_value_delimiter: "~"
+    column_delimiter: ";"
+    report_name: "PreCheck"
+
+  tasks:
+    - name: Set HTML report content
+      set_fact:
+        html_report_content: "{{ column_values.split(column_delimiter) | map('regex_replace', '<', '&lt;') | map('regex_replace', '>', '&gt;') | map('regex_replace', 'bgcolor=', 'bgcolor=') | map('regex_replace', ' ', '&nbsp;') }}{{ row_values.split(row_value_delimiter) | map('regex_replace', '<', '&lt;') | map('regex_replace', '>', '&gt;') | map('regex_replace', 'bgcolor=', 'bgcolor=') | map('regex_replace', ' ', '&nbsp;') | join('\n') }}"
+
+    - name: Create HTML report file
+      template:
+        src: report_template2.j2
+        dest: output/report1.html
