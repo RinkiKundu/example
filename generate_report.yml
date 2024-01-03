@@ -1,3 +1,15 @@
+######### DETAILS OF PLAYBOOK #########
+# Playbook Name: generate_report.yml
+# Playbook Description: to generate a HTML report based on input row value, column value, row delimiter, column delimiter, report name.
+# Inputs Required: column_values, row_values, row_value_delimiter, column_delimiter, report_name, html_file_path
+## Sample values ##
+  # column_values: "ServerName;Reachable;serverType;osVersion;Uptime;cpuUsagePercent;cpuCores"
+  # row_values: "localhost;Yes;Physical;Microsoft Windows 10 Pro;4D 6H 57M 48S;<td bgcolor=greenColor>13</td>;<td bgcolor=yellowColor>4</td>~abc;No;-;-;-;-;-~xyz;No;-;-;-;-;-"
+  # row_value_delimiter: "~"
+  # column_delimiter: ";"
+  # report_name: "PreCheck"
+  # html_file_path: "/home/ec2-user/testing/output"
+
 ---
 - name: Generate HTML Report
   hosts: localhost
@@ -10,9 +22,14 @@
     column_delimiter: ";"
     report_name: "PreCheck"
     html_file_path: "./output"
-    #/home/ec2-user/testing/output
-
-
+    
+    # column_values: "{{ column_values }}"
+    # row_values: "{{ row_values }}"
+    # row_value_delimiter: "{{ row_value_delimiter }}"
+    # column_delimiter: "{{ column_delimiter }}"
+    # report_name: "{{ report_name }}"
+    # html_file_path: "{{ html_file_path }}"
+    
   tasks:
 
     - name: Parse JSON response
