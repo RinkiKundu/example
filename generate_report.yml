@@ -9,7 +9,8 @@
     row_value_delimiter: "~"
     column_delimiter: ";"
     report_name: "PreCheck"
-    html_file_path: "/home/ec2-user/testing/output"
+    html_file_path: "./output"
+    #/home/ec2-user/testing/output
 
 
   tasks:
