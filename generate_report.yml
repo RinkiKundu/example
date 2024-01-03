@@ -34,7 +34,7 @@
     # html_file_path: "{{ html_file_path }}"
     
   tasks:
-
+  
     - name: Parse JSON response
       set_fact:
         report_file_name: "{{ report_name }}-{{ ansible_date_time.date }}-{{ ansible_date_time.hour }}-{{ ansible_date_time.minute }}-{{ ansible_date_time.second }}"
