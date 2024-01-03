@@ -1,6 +1,6 @@
 ######### DETAILS OF PLAYBOOK #########
 # Playbook Name: generate_report.yml
-# Playbook Description: to generate a HTML report based on input row value, column value, row delimiter, column delimiter, report name.
+# Playbook Description: To generate a HTML report based on input row value, column value, row delimiter, column delimiter, report name.
 # Inputs Required: column_values, row_values, row_value_delimiter, column_delimiter, report_name, html_file_path
 ## Sample values ##
   # column_values: "ServerName;Reachable;serverType;osVersion;Uptime;cpuUsagePercent;cpuCores"
