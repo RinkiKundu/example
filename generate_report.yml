@@ -16,19 +16,19 @@
   gather_facts: true
 
   vars:
-    column_values: "ServerName;Reachable;serverType;osVersion;Uptime;cpuUsagePercent;cpuCores"
-    row_values: "localhost;Yes;Physical;Microsoft Windows 10 Pro;4D 6H 57M 48S;<td bgcolor=greenColor>13</td>;<td bgcolor=yellowColor>4</td>~abc;No;-;-;-;-;-~xyz;No;-;-;-;-;-"
-    row_value_delimiter: "~"
-    column_delimiter: ";"
-    report_name: "PreCheck"
-    html_file_path: "./output"
+    # column_values: "ServerName;Reachable;serverType;osVersion;Uptime;cpuUsagePercent;cpuCores"
+    # row_values: "localhost;Yes;Physical;Microsoft Windows 10 Pro;4D 6H 57M 48S;<td bgcolor=greenColor>13</td>;<td bgcolor=yellowColor>4</td>~abc;No;-;-;-;-;-~xyz;No;-;-;-;-;-"
+    # row_value_delimiter: "~"
+    # column_delimiter: ";"
+    # report_name: "PreCheck"
+    # html_file_path: "./output"
     
-    # column_values: "{{ column_values }}"
-    # row_values: "{{ row_values }}"
-    # row_value_delimiter: "{{ row_value_delimiter }}"
-    # column_delimiter: "{{ column_delimiter }}"
-    # report_name: "{{ report_name }}"
-    # html_file_path: "{{ html_file_path }}"
+    column_values: "{{ column_values }}"
+    row_values: "{{ row_values }}"
+    row_value_delimiter: "{{ row_value_delimiter }}"
+    column_delimiter: "{{ column_delimiter }}"
+    report_name: "{{ report_name }}"
+    html_file_path: "{{ html_file_path }}"
     
   tasks:
 
