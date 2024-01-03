@@ -9,26 +9,29 @@
   # column_delimiter: ";"
   # report_name: "PreCheck"
   # html_file_path: "/home/ec2-user/testing/output"
-
+## COMMAND TO EXECUTE BY PASSING VALUES AT RUN TIME ##
+# ansible-playbook -e "column_values=ServerName;Reachable;serverType;osVersion;Uptime;cpuUsagePercent;cpuCores, row_values=localhost;Yes;Physical;Microsoft Windows 10 Pro;4D 6H 57M 48S;<td bgcolor=greenColor>13</td>;<td bgcolor=yellowColor>4</td>~abc;No;-;-;-;-;-~xyz;No;-;-;-;-;-, row_value_delimiter=~, column_delimiter=;, report_name=PreCheck, html_file_path=./output" generate_report.yml
 ---
 - name: Generate HTML Report
   hosts: localhost
   gather_facts: true
 
   vars:
-    # column_values: "ServerName;Reachable;serverType;osVersion;Uptime;cpuUsagePercent;cpuCores"
-    # row_values: "localhost;Yes;Physical;Microsoft Windows 10 Pro;4D 6H 57M 48S;<td bgcolor=greenColor>13</td>;<td bgcolor=yellowColor>4</td>~abc;No;-;-;-;-;-~xyz;No;-;-;-;-;-"
-    # row_value_delimiter: "~"
-    # column_delimiter: ";"
-    # report_name: "PreCheck"
-    # html_file_path: "./output"
-    
-    column_values: "{{ column_values }}"
-    row_values: "{{ row_values }}"
-    row_value_delimiter: "{{ row_value_delimiter }}"
-    column_delimiter: "{{ column_delimiter }}"
-    report_name: "{{ report_name }}"
-    html_file_path: "{{ html_file_path }}"
+    ## BELOW VALUES ARE HARDCODED FOR TESTING. PUT '#' FROM LINE 21 TO 26 IF INPUTS TO BE TAKEN AT RUN TIME ##
+    column_values: "ServerName;Reachable;serverType;osVersion;Uptime;cpuUsagePercent;cpuCores"
+    row_values: "localhost;Yes;Physical;Microsoft Windows 10 Pro;4D 6H 57M 48S;<td bgcolor=greenColor>13</td>;<td bgcolor=yellowColor>4</td>~abc;No;-;-;-;-;-~xyz;No;-;-;-;-;-"
+    row_value_delimiter: "~"
+    column_delimiter: ";"
+    report_name: "PreCheck"
+    html_file_path: "./output"
+
+    ## REMOVE THE '#' IF INPUTS TO BE TAKEN AT RUN TIME. ##
+    # column_values: "{{ column_values }}"
+    # row_values: "{{ row_values }}"
+    # row_value_delimiter: "{{ row_value_delimiter }}"
+    # column_delimiter: "{{ column_delimiter }}"
+    # report_name: "{{ report_name }}"
+    # html_file_path: "{{ html_file_path }}"
     
   tasks:
 
