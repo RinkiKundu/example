@@ -25,7 +25,7 @@
     report_name: "PreCheck"
     html_file_path: "./output"
 
-    ## REMOVE THE '#' IF INPUTS TO BE TAKEN AT RUN TIME. ##
+    ## BELOW VALUES ARE HARDCODED FOR TESTING. PUT '#' FROM LINE 21 TO 26 IF INPUTS TO BE TAKEN AT RUN TIME & UNCOMMENT FROM LINE 29 TO 34 ##
     # column_values: "{{ column_values }}"
     # row_values: "{{ row_values }}"
     # row_value_delimiter: "{{ row_value_delimiter }}"
