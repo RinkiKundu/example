@@ -10,5 +10,5 @@
 
     - name: Install Package
       apt:
-        name: apache2   # change to whatever package you want to install
+        name: cmatrix   # change to whatever package you want to install
         state: present
