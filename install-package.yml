@@ -1,0 +1,14 @@
+---
+- name: Install packages
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: Update apt package cache
+      apt:
+        update_cache: yes
+
+    - name: Install Package
+      apt:
+        name: nginx   # change to whatever package you want to install
+        state: present
