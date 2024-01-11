@@ -1,6 +1,6 @@
 ---
 - name: Install packages
-  hosts: localhost
+  hosts: 52.66.213.100
   become: true
 
   tasks:
